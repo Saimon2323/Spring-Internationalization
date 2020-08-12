@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ViewController {
 
-    @GetMapping
-    public String home() {
+    @GetMapping("/international")
+    public String getInternationalPage() {
         return "index";
     }
 

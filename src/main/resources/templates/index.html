@@ -5,11 +5,40 @@
     <title>Home page</title>
 </head>
 <body>
-<!--    https://www.tutorialspoint.com/spring_boot/spring_boot_internationalization.htm -->
+<!-- https://www.baeldung.com/spring-boot-internationalization -->
+<!-- https://www.tutorialspoint.com/spring_boot/spring_boot_internationalization.htm -->
 
-    <a th:href="@{'?language=en'}">English</a> &nbsp;
-    <a th:href="@{'?language=bn'}">বাংলা</a> &nbsp;
-    <a th:href="@{'?language=de'}">German</a>
-    <h1 th:text = "#{welcome.text}"></h1>
+<!--    <a th:href="@{'?language=en'}">English</a> &nbsp;-->
+<!--    <a th:href="@{'?language=bn'}">বাংলা</a> &nbsp;-->
+<!--    <a th:href="@{'?language=de'}">German</a>-->
+<!--    <h1 th:text = "#{welcome.text}"></h1>-->
+
+    <h1 th:text="#{greeting}"></h1>
+
+    <span th:text="#{language.change}"></span>:
+    <select id="locales">
+        <option value=""></option>
+        <option value="en" th:text="#{language.eng}"></option>
+        <option value="fr" th:text="#{language.fr}"></option>
+        <option value="de" th:text="#{language.de}"></option>
+        <option value="bn" th:text="#{language.bn}"></option>
+    </select>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+    $(function () {
+       $("#locales").change(function () {
+          var selectedOption = $(this).val();
+          if (selectedOption !== '') {
+              window.location.replace("international?language=" + selectedOption);
+          }
+       });
+    });
+</script>
+
 </body>
 </html>
