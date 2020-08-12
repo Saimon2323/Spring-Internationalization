@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+<!--    https://www.tutorialspoint.com/spring_boot/spring_boot_internationalization.htm -->
+
+    <a th:href="@{'?language=en'}">English</a> &nbsp;
+    <a th:href="@{'?language=bn'}">বাংলা</a> &nbsp;
+    <a th:href="@{'?language=de'}">German</a>
+    <h1 th:text = "#{welcome.text}"></h1>
+</body>
+</html>
