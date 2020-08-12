@@ -17,7 +17,7 @@ import java.util.Locale;
  */
 
 @Configuration
-public class Internationalization implements WebMvcConfigurer {
+public class InternationalizationConfig implements WebMvcConfigurer {
 
     @Bean
     public LocaleResolver localeResolver() {
